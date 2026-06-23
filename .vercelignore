@@ -1,0 +1,14 @@
+# Raw source media in project root — only src/assets/ is needed for the build
+*.pdf
+*.mp4
+*.jpeg
+*.jpg
+*.png
+*.mp3
+
+# Dev artifacts
+node_modules
+.env
+preview-*.png
+v2-*.png
+v3-*.png

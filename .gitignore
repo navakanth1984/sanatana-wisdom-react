@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+
+# Raw loose media in project root (not needed — src/assets/ is the source of truth)
+*.pdf
+*.png
+Elderly_sage_*.jpeg
+Sage_holding_palm_leaf_*.mp4
+ChatGPT*
+
+# OS
+.DS_Store
+Thumbs.db
