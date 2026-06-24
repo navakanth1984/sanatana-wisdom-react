@@ -1,12 +1,11 @@
 import { useRef, useEffect, useState } from 'react'
 
-// Desktop (16:9) assets
-const videoDesktop  = new URL('./assets/sage-video.mp4',           import.meta.url).href
-const posterDesktop = new URL('./assets/sage-desktop.jpeg',        import.meta.url).href
-// Mobile (9:16) assets — portrait orientation
-const videoMobile   = new URL('./assets/sage-video-mobile.mp4',    import.meta.url).href
-const posterMobile  = new URL('./assets/sage-mobile-portrait.jpeg', import.meta.url).href
-const fallbackMobile = new URL('./assets/sage-mobile-portrait2.jpeg', import.meta.url).href
+import videoDesktop from './assets/sage-video.mp4'
+import posterDesktop from './assets/sage-desktop.jpeg'
+import videoMobile from './assets/sage-video-mobile.mp4'
+import posterMobile from './assets/sage-mobile-portrait.jpeg'
+import fallbackMobile from './assets/sage-mobile-portrait2.jpeg'
+
 
 // Detect mobile once (avoids per-render matchMedia calls)
 function isMobile() {

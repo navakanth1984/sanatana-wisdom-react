@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { categories, saptaRishi, sanskritTopics, texts } from './data.js'
-const rishiAvatarSrc = new URL('./assets/rishi-avatar.png', import.meta.url).href
-const videoDesktop = new URL('./assets/sage-video.mp4', import.meta.url).href
-const videoMobile = new URL('./assets/sage-video-mobile.mp4', import.meta.url).href
+import rishiAvatarSrc from './assets/rishi-avatar.png'
+import videoDesktop from './assets/sage-video.mp4'
+import videoMobile from './assets/sage-video-mobile.mp4'
+
 
 import SageConsole from './SageConsole.jsx'
 import QuantumVeda from './QuantumVeda.jsx'
