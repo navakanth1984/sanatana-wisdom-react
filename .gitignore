@@ -9,6 +9,12 @@ Elderly_sage_*.jpeg
 Sage_holding_palm_leaf_*.mp4
 ChatGPT*
 
+# But keep everything inside src/assets/ — that's what the app imports
+!src/assets/
+!src/assets/**
+
 # OS
 .DS_Store
 Thumbs.db
+
+.vercel
