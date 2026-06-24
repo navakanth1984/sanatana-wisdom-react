@@ -3,6 +3,7 @@
 // jump to a section. `active` + `onSelect` are passed from App (lifted state).
 const SECTIONS = [
   { id: 'sage', icon: '🧙', label: 'Sage' },
+  { id: 'map', icon: '🌌', label: 'Cosmos' },
   { id: 'culture', icon: '🏛️', label: 'Culture' },
   { id: 'sanskrit', icon: 'ॐ', label: 'Sanskrit' },
   { id: 'rishi', icon: '✨', label: 'Rishi' },

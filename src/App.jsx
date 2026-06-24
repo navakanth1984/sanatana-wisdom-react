@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import { categories, saptaRishi, sanskritTopics, texts } from './data.js'
 const rishiAvatarSrc = new URL('./assets/rishi-avatar.png', import.meta.url).href
+const videoDesktop = new URL('./assets/sage-video.mp4', import.meta.url).href
+const videoMobile = new URL('./assets/sage-video-mobile.mp4', import.meta.url).href
+
 import SageConsole from './SageConsole.jsx'
 import QuantumVeda from './QuantumVeda.jsx'
 import ThumbStrip from './ThumbStrip.jsx'
+import NeuralCanvas from './NeuralCanvas.jsx'
 
 // ─────────────────────────────────────────────────────────────
 // App composes the page from feature components. State that two
@@ -28,9 +32,44 @@ export default function App() {
 
   return (
     <>
+      {/* ── GLOBAL BACKGROUND VIDEO (Low Opacity Multiverse Effect) ── */}
+      <div className="global-video-bg">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="desktop-bg-video"
+        >
+          <source src={videoDesktop} type="video/mp4" />
+        </video>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="mobile-bg-video"
+        >
+          <source src={videoMobile} type="video/mp4" />
+        </video>
+      </div>
+
       {/* ── SAGE CONSOLE (image + taalapatra + voice/text) ── */}
       <div className={`block ${section === 'sage' ? 'is-active' : ''}`} data-section="sage">
         <SageConsole pendingAsk={pendingAsk} />
+      </div>
+
+      {/* ── COSMIC KNOWLEDGE GRAPH (3D Interactive Diya Map) ── */}
+      <div className={`block ${section === 'map' ? 'is-active' : ''}`} data-section="map">
+        <section className="map-panel">
+          <h2 className="section-title gold devanagari">ब्रह्माण्डचित्र</h2>
+          <p className="section-subtitle">Cosmic Knowledge Graph — Drag to Rotate, Scroll to Zoom, Tap Diya to Ask</p>
+          <div className="map-canvas-wrapper">
+            <NeuralCanvas onNodeSelect={(node) => {
+              askAboutText({ id: node.id, ask: node.ask, mode: node.mode })
+            }} />
+          </div>
+        </section>
       </div>
 
       {/* ── ANCIENT INDIAN CULTURE ── */}

@@ -293,3 +293,50 @@ body {
   .mode-btn { flex: 1 1 40%; }
   .sanskrit-layout { grid-template-columns: 1fr; }
 }
+
+/* ════════════ GLOBAL BACKGROUND VIDEO ════════════ */
+.global-video-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.desktop-bg-video, .mobile-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.08; /* Multiverse ambient background effect */
+}
+@media (min-width: 769px) {
+  .mobile-bg-video { display: none; }
+}
+@media (max-width: 768px) {
+  .desktop-bg-video { display: none; }
+}
+
+/* ════════════ COSMIC KNOWLEDGE GRAPH ════════════ */
+.map-panel {
+  padding: 28px;
+  border-bottom: 1px solid var(--border-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.map-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  background: rgba(10, 6, 2, 0.45);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 35px rgba(245, 196, 81, 0.04);
+}
+@media (max-width: 768px) {
+  .map-canvas-wrapper {
+    height: 400px;
+  }
+}
+
