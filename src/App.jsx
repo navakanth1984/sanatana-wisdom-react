@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { categories, saptaRishi, sanskritTopics, texts } from './data.js'
+const rishiAvatarSrc = new URL('./assets/rishi-avatar.png', import.meta.url).href
 import SageConsole from './SageConsole.jsx'
 import QuantumVeda from './QuantumVeda.jsx'
 import ThumbStrip from './ThumbStrip.jsx'
@@ -93,7 +94,9 @@ export default function App() {
           <div className="rishi-row">
             {saptaRishi.map((r) => (
               <div className="rishi-card" key={r.name}>
-                <div className="rishi-figure">🧙‍♂️</div>
+                <div className="rishi-figure">
+                  <img src={rishiAvatarSrc} alt={r.name} className="rishi-avatar" />
+                </div>
                 <p className="rishi-name devanagari small">{r.dev}</p>
                 <p className="rishi-name">{r.name}</p>
               </div>
