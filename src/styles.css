@@ -340,3 +340,25 @@ body {
   }
 }
 
+/* ════════════ TAALAPATRA SAGE STATUS AVATAR ════════════ */
+.leaf-status-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  background: rgba(58, 36, 16, 0.06);
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px dashed rgba(58, 36, 16, 0.2);
+  width: fit-content;
+}
+.leaf-status-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #3a2410;
+  box-shadow: 0 0 6px rgba(184, 150, 104, 0.3);
+}
+
+

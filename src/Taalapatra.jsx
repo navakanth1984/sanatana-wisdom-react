@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
+import rishiAvatar from './assets/rishi-avatar.png'
 
 // ── The palm-leaf (ताडपत्र) manuscript ──
 // Flow:  user message lands on the leaf  ->  sage "reads" (status)  ->
 //        Sanskrit reply is revealed character-by-character (the handwriting effect).
-//
-// The handwriting effect is pure JS + CSS: we keep a `shown` substring in state
-// and grow it on a timer. No video, no library.
 export default function Taalapatra({ userText, reply, status }) {
   const [shown, setShown] = useState('')
   const full = reply?.sanskrit || ''
@@ -34,8 +32,13 @@ export default function Taalapatra({ userText, reply, status }) {
           </p>
         )}
 
-        {/* Sage status line */}
-        {status && <p className="leaf-status">{status}</p>}
+        {/* Sage status line with minimized actual Sage Avatar instead of wizard emoji */}
+        {status && (
+          <div className="leaf-status-container">
+            <img src={rishiAvatar} className="leaf-status-avatar" alt="Sage" />
+            <p className="leaf-status">{status.replace('🧙 ', '').replace('⚠️ ', '')}</p>
+          </div>
+        )}
 
         {/* The sage's reply, written stroke by stroke */}
         {full && (
